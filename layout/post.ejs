@@ -1,3 +1,18 @@
+<% if (theme.verifyPassword.enable) { %>
+    <script src="https://cdn.bootcss.com/crypto-js/3.1.9/crypto-js.min.js"></script>
+    <script>
+        (function() {
+            let pwd = '<%- page.password %>';
+            if (pwd && pwd.length > 0) {
+                if (pwd !== CryptoJS.SHA256(prompt('<%- theme.verifyPassword.promptMessage %>')).toString(CryptoJS.enc.Hex)) {
+                    alert('<%- theme.verifyPassword.errorMessage %>');
+                    location.href = '<%- url_for("/")  %>';
+                }
+            }
+        })();
+    </script>
+<% } %>
+
 <!-- Post TOC -->
 <% if( (page.toc === true) || (is_post() && page.toc !== false) ) { %>
     <%- partial('_partial/toc_button') %>
