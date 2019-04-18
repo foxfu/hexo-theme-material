@@ -22,7 +22,7 @@
         <%if(post.excerpt) {%>
             <%- strip_html(post.excerpt) %>
         <%}else{%>
-            <%- strip_html(truncate(post.content,{length: theme.reading.entry_excerpt })) %>
+            <%- truncate(strip_html(post.content), {length: theme.reading.entry_excerpt}) %>
         <%}%>
         &nbsp;&nbsp;&nbsp;
         <span>

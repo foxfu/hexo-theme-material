@@ -207,10 +207,6 @@ sidebar:
             link: "/timeline"
             icon: timeline
             divider: false
-        相册:
-            link: "/gallery"
-            icon: photo
-            divider: false
         关于M&S:
             link: "/about"
             icon: person
